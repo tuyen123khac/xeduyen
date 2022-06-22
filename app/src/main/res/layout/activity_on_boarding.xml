@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onboarding.activities.OnBoardingActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_36sdp"
+        android:paddingHorizontal="@dimen/_70sdp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/circleIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:ci_width="@dimen/_8sdp"
+        app:ci_height="@dimen/_8sdp"
+        app:ci_animator="@animator/not_scale"
+        app:ci_drawable="@drawable/circle_indicator"
+        app:ci_drawable_unselected="@drawable/circle_indicator_unselected"
+        app:layout_constraintTop_toBottomOf="@id/viewPager2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
