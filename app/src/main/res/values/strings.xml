@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">XeDuyen</string>
+    <string name="algorithm">Algorithm</string>
+    <string name="matches">Matches</string>
+    <string name="premium">Premium</string>
+    <string name="sign_up_today_and_enjoy">Sign up today and enjoy the first month of premium benefits on us.</string>
+    <string name="we_match_you_with_people">We match you with people that have a large array of similar interests.</string>
+    <string name="users_going_through_a_vetting_process">Users going through a vetting process to ensure you never match with bots.</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".onboarding.activities.OnBoardingActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_36sdp"
+        android:paddingHorizontal="@dimen/_70sdp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_44sdp"
+        android:fontFamily="@font/sk_modernist_bold"
+        android:gravity="center"
+        android:text="@string/algorithm"
+        android:textColor="@color/red"
+        android:textSize="@dimen/large"
+        app:layout_constraintTop_toBottomOf="@id/viewPager2" />
+
+    <TextView
+        android:id="@+id/pageDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/sk_modernist_regular"
+        android:gravity="center"
+        android:text="@string/users_going_through_a_vetting_process"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/small"
+        app:layout_constraintTop_toBottomOf="@id/pageTitle" />
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/circleIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:ci_animator="@animator/not_scale"
+        app:ci_drawable="@drawable/circle_indicator"
+        app:ci_drawable_unselected="@drawable/circle_indicator_unselected"
+        app:ci_height="@dimen/_8sdp"
+        app:ci_width="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@id/pageDescription" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_40sdp"
+        android:minHeight="@dimen/_56sdp"
+        android:text="@string/create_an_account"
+        android:textAllCaps="false"
+        android:theme="@style/ButtonSolidTheme"
+        app:cornerRadius="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/loginContainer" />
+
+    <LinearLayout
+        android:id="@+id/loginContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/_44sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/sk_modernist_regular"
+            android:gravity="center"
+            android:text="@string/already_have_an_account"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/small" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/sk_modernist_regular"
+            android:gravity="center"
+            android:text="@string/sign_in"
+            android:textColor="@color/red"
+            android:textSize="@dimen/small"
+            android:textStyle="bold" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
