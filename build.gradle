@@ -1,6 +1,6 @@
 buildscript {
     ext.hilt_version = '2.38.1'
-    ext.kotlin_version = '1.7.0'
+    ext.kotlin_version = '1.5.21'
     ext.view_pager_2_version = '1.0.0'
     ext.rounded_image_view = '2.3.0'
     ext.intuit_version = '1.0.6'

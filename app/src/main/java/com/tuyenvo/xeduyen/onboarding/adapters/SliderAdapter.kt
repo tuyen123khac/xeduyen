@@ -8,11 +8,14 @@ import com.bumptech.glide.Glide
 import com.tuyenvo.xeduyen.R
 import com.tuyenvo.xeduyen.databinding.OnBoardingImageItemBinding
 import com.tuyenvo.xeduyen.onboarding.models.SliderItem
+import javax.inject.Inject
 
-class SliderAdapter(private val imageList: List<SliderItem>, private val viewPager2: ViewPager2) : RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {
+class SliderAdapter @Inject constructor(val imageList: List<SliderItem>) :
+    RecyclerView.Adapter<SliderAdapter.SliderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SliderViewHolder {
-        val itemBinding = OnBoardingImageItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemBinding =
+            OnBoardingImageItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SliderViewHolder(itemBinding)
     }
 
@@ -27,7 +30,7 @@ class SliderAdapter(private val imageList: List<SliderItem>, private val viewPag
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(sliderItem: SliderItem) {
             Glide
-                .with(itemBinding.roundedImageView.context)
+                .with(itemBinding.root.context)
                 .load(sliderItem.imageUrl)
                 .placeholder(R.drawable.ic_image_placeholder)
                 .into(itemBinding.roundedImageView)
