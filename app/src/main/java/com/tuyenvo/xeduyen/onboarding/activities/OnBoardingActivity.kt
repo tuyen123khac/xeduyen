@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.tuyenvo.xeduyen.account.activities.AccountActivity
 import com.tuyenvo.xeduyen.databinding.ActivityOnBoardingBinding
 import com.tuyenvo.xeduyen.onboarding.adapters.SliderAdapter
+import com.tuyenvo.xeduyen.utils.Constant
+import com.tuyenvo.xeduyen.utils.routeToActivityWithStringIntent
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import javax.inject.Inject
@@ -17,6 +20,7 @@ import kotlin.math.abs
 @AndroidEntryPoint
 class OnBoardingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOnBoardingBinding
+
     @Inject
     lateinit var sliderAdapter: SliderAdapter
 
@@ -25,10 +29,16 @@ class OnBoardingActivity : AppCompatActivity() {
         binding = ActivityOnBoardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupView()
+        setupListener()
     }
 
     private fun setupView() {
         setupViewPager()
+    }
+
+    private fun setupListener() {
+        onPressCreateAccount()
+        onPressSignIn()
     }
 
     private fun setupViewPager() {
@@ -78,6 +88,26 @@ class OnBoardingActivity : AppCompatActivity() {
                     currentItem += 1
                 }
             }
+        }
+    }
+
+    private fun onPressCreateAccount() {
+        binding.createAccountButton.setOnClickListener {
+            routeToActivityWithStringIntent(
+                AccountActivity::class.java,
+                Constant.ACCOUNT_ACTION_TYPE,
+                Constant.SIGN_UP
+            )
+        }
+    }
+
+    private fun onPressSignIn() {
+        binding.signInButton.setOnClickListener {
+            routeToActivityWithStringIntent(
+                AccountActivity::class.java,
+                Constant.ACCOUNT_ACTION_TYPE,
+                Constant.SIGN_IN
+            )
         }
     }
 }
