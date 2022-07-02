@@ -36,7 +36,6 @@ android {
         viewBinding true
         dataBinding true
     }
-
 }
 
 dependencies {
@@ -78,4 +77,9 @@ dependencies {
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    // Okhttp
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
 }
